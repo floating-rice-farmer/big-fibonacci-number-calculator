@@ -3,7 +3,7 @@
 A high-performance Fibonacci calculator using the GNU Multiple Precision (GMP) library.
 
 ## Compilation
-$ gcc -O3 -march=native fib.c -o fibo -lgmp
+`gcc -O3 -march=native fib.c -o fibo -lgmp`
 
 ## Usage
 1. Run: `./fibo`
