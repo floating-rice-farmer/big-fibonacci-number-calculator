@@ -17,14 +17,14 @@ Calculating Fibonacci numbers at scale requires more than just a simple loop. Th
    - **Karatsuba**: For medium numbers.
    - **Schönhage-Strassen (FFT)**: For massive numbers, treating large integers like signals to perform multiplication in $O(n \log n \log \log n)$ time.
 
-
-
-## Prerequisites (NixOS)
-Run the following to enter a development environment with all dependencies:
-$ nix-shell -p gcc gmp
+## Performance
+1. Basically the only bottleneck to this is your RAM, and nothing else.
+2. Recommended maximum size is 1 billion, as anything above that:
+  a. Your OS may terminate the process
+  b. It will write a pretty substantial file to your disk
 
 ## Compilation
-$ gcc -O3 -march=native fib.c -o fibo -lgmp
+`$ gcc -O3 -march=native fib.c -o fibo -lgmp`
 
 ## Usage
 1. Run: `./fibo`
