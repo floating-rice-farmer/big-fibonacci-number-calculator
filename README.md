@@ -1,13 +1,32 @@
-# big-fibonacci-number-calculator
+# FastFib-GMP
 
 A high-performance Fibonacci calculator using the GNU Multiple Precision (GMP) library.
 
+## How It Works
+
+Calculating Fibonacci numbers at scale requires more than just a simple loop. This program uses several layers of optimization to achieve maximum speed:
+
+1. **Fast Doubling Algorithm**: Instead of calculating every number in the sequence (F1, F2, F3...), the program uses the Fast Doubling identities:
+   - $F_{2k} = F_k(2F_{k+1} - F_k)$
+   - $F_{2k+1} = F_{k+1}^2 + F_k^2$
+   This allows the program to reach the $N$-th index in $O(\log N)$ steps.
+
+2. **Arbitrary Precision (GMP)**: Standard integers (64-bit) overflow at $F_{93}$. GMP uses "limbs" (arrays of 64-bit integers) to represent numbers with millions of digits.
+
+3. **Multiplication Optimization**: For massive numbers, multiplication is the bottleneck. GMP automatically switches between:
+   - **Karatsuba**: For medium numbers.
+   - **Schönhage-Strassen (FFT)**: For massive numbers, treating large integers like signals to perform multiplication in $O(n \log n \log \log n)$ time.
+
+
+
+## Prerequisites (NixOS)
+Run the following to enter a development environment with all dependencies:
+$ nix-shell -p gcc gmp
+
 ## Compilation
-`gcc -O3 -march=native fib.c -o fibo -lgmp`
+$ gcc -O3 -march=native fib.c -o fibo -lgmp
 
 ## Usage
 1. Run: `./fibo`
 2. Enter index: (e.g., 1000000)
 3. Output: View result in `fibo.txt`
-
-> why would you want this
