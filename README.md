@@ -1,4 +1,4 @@
-# FastFib-GMP
+# Very large fibonacci number calculator
 
 A high-performance Fibonacci calculator using the GNU Multiple Precision (GMP) library.
 
