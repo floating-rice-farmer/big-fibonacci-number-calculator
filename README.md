@@ -23,6 +23,8 @@ Calculating Fibonacci numbers at scale requires more than just a simple loop. Th
   a. Your OS may terminate the process
   b. It will write a pretty substantial file to your disk
 
+The unsigned long n used for the index is a 64-bit integer on your system. This means the theoretical maximum index you could request is 264−1. However, you would run out of atoms in the known universe to store that number long before you reached it, so no need to worry about the maximum limit!
+
 ## Compilation
 `$ gcc -O3 -march=native fib.c -o fibo -lgmp`
 
