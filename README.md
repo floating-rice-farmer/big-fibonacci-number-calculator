@@ -23,7 +23,7 @@ Calculating Fibonacci numbers at scale requires more than just a simple loop. Th
   a. Your OS may terminate the process
   b. It will write a pretty substantial file to your disk
 
-The unsigned long n used for the index is a 64-bit integer on your system. This means the theoretical maximum index you could request is $2^64−1$3304030213614062323091857747000093834040021045301004301700683083843521925795625831409717959456793157493797889728906819027277739833113344943773498804317645382348686476485015101334769194179257123570036844829525409. However, you would run out of atoms in the known universe to store that number long before you reached it, so no need to worry about the maximum limit!
+The unsigned long n used for the index is a 64-bit integer on your system. This means the theoretical maximum index you could request is $2^64−1$. However, you would run out of atoms in the known universe to store that number long before you reached it, so no need to worry about the maximum limit!
 
 It's also multi core
 
