@@ -1,5 +1,7 @@
 # Very large fibonacci number calculator
 
+[![blazingly fast](https://www.blazingly.fast/api/badge.svg?repo=floating-rice-farmer%2Fbig-fibonacci-number-calculator)](https://www.blazingly.fast)
+
 A high-performance Fibonacci calculator using the GNU Multiple Precision (GMP) library.
 
 ## How It Works
